@@ -1,0 +1,12 @@
+code: bmad-tdd
+name: 'Dev TDD (BMad Community Module)'
+description: 'Strict test-first story implementation: failure-mode analysis, then red-green-refactor, then defensive hardening'
+default_selected: false
+
+# Requires the BMad Method (bmm) module. The workflow reads bmm's
+# config.yaml for implementation_artifacts and user/language settings, and
+# discovers work through bmm's story files and sprint-status.yaml.
+#
+# No config prompts of its own — everything it needs comes from bmm.
+# No agents of its own — it attaches to bmm's dev agent (Amelia) via a
+# customization override. See README.
