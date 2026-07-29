@@ -1,0 +1,4 @@
+# Skill content is parsed by tooling that searches for literal "\n---\n"
+# frontmatter delimiters. A CRLF checkout breaks that parse, so pin LF
+# regardless of the contributor's core.autocrlf setting.
+* text=auto eol=lf
