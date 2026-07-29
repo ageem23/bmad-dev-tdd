@@ -7,7 +7,16 @@
   "license": "MIT",
   "homepage": "https://github.com/ageem23/bmad-dev-tdd",
   "repository": "https://github.com/ageem23/bmad-dev-tdd",
-  "keywords": ["bmad", "tdd", "test-driven-development", "testing", "quality", "defensive-programming"],
+  "keywords": [
+    "bmad",
+    "tdd",
+    "test-driven-development",
+    "story-implementation",
+    "development-workflow",
+    "defensive-programming",
+    "testing",
+    "quality"
+  ],
   "plugins": [
     {
       "name": "bmad-dev-tdd",
