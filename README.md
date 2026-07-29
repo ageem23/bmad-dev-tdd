@@ -12,6 +12,8 @@ Two rules are enforced throughout that ordinary "write some tests" prompting doe
 ## Requirements
 
 - BMad Method v6+ with the **`bmm` module installed**. This module is an extension of bmm, not a standalone: it reads bmm's `config.yaml` and discovers work through bmm's story files and `sprint-status.yaml`.
+
+  Nothing enforces this at install time — `--custom-source` without `--modules bmm` installs the skill into a project that cannot run it. The workflow checks for bmm's config on activation and halts with an actionable message rather than proceeding with unresolved paths, but keeping `--modules bmm` in the install command is what avoids the situation.
 - A project with a runnable test harness. The workflow establishes a test baseline before writing anything and halts if there is no way to run tests.
 
 ## Install

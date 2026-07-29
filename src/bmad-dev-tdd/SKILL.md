@@ -58,6 +58,12 @@ Read `test-design-reference.md` fully. It is the authority on what tests to writ
 
 ### Step 5: Load Config
 
+**Precondition — this workflow extends bmm.** If `{project-root}/_bmad/bmm/config.yaml` does not exist, HALT immediately with:
+
+> `bmad-dev-tdd` requires the BMad Method (`bmm`) module, which is not installed. Add it with `npx bmad-method install --modules bmm`, then run this workflow again.
+
+Do NOT substitute this module's own `{project-root}/_bmad/bmad-tdd/config.yaml` — the installer generates it, but it carries only the shared core values and has neither `user_skill_level` nor `implementation_artifacts`. Do NOT proceed with those values unresolved: `implementation_artifacts` is what `sprint_status` and story discovery are built on, and continuing without it produces a misleading "no ready-for-dev stories found" instead of naming the real problem. Fail loudly here rather than degrade quietly — the same standard this workflow holds the code it writes to.
+
 Load config from `{project-root}/_bmad/bmm/config.yaml` and resolve:
 
 - `project_name`, `user_name`
@@ -66,6 +72,8 @@ Load config from `{project-root}/_bmad/bmm/config.yaml` and resolve:
 - `implementation_artifacts`
 - `date` as system-generated current datetime
 - `project_context` = `**/project-context.md` (load if exists)
+
+If any of `user_skill_level` or `implementation_artifacts` is missing from an otherwise-present config, HALT and name the missing key rather than guessing a default.
 
 ### Step 6: Greet the User
 
