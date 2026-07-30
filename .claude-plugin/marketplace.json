@@ -3,7 +3,7 @@
   "owner": {
     "name": "ageem23"
   },
-  "description": "Strict test-first story implementation for the BMad Method — failure-mode analysis per behavior, then red-green-refactor, then defensive hardening justified by tests.",
+  "description": "Test-first replacement for the dev step of the BMad story cycle — per-behavior failure-mode analysis, then red-green-refactor, then defensive hardening justified by tests.",
   "license": "MIT",
   "homepage": "https://github.com/ageem23/bmad-dev-tdd",
   "repository": "https://github.com/ageem23/bmad-dev-tdd",
@@ -21,7 +21,7 @@
     {
       "name": "bmad-dev-tdd",
       "source": "./",
-      "description": "Story cycle alternative to dev-story: enumerate failure modes per behavior, derive a test list, run red-green-refactor, then harden defensively. Requires the bmm module.",
+      "description": "Interactive test-first alternative to bmad-dev-story for one step of the cycle, not an unattended orchestrator: enumerate failure modes per behavior, derive a test list, run red-green-refactor, then harden defensively. Requires the bmm module.",
       "version": "0.1.0",
       "author": {
         "name": "ageem23"

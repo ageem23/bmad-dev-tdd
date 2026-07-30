@@ -9,6 +9,20 @@ Where the built-in `bmad-dev-story` mentions red-green-refactor as one step amon
 
 Two rules are enforced throughout that ordinary "write some tests" prompting does not give you: a red must fail *for the right reason* (a missing-symbol error is not a valid red), and no test may be weakened, skipped, or deleted to reach green.
 
+## How this differs from what BMad already has
+
+This module replaces **one step** of the story cycle — the dev step — and nothing else. It is interactive, and it is a methodology, not an orchestrator or a test generator.
+
+| If you want to… | Use |
+| --- | --- |
+| Implement a story the standard way | `bmad-dev-story` (built into bmm) |
+| Implement a story test-first, with failure modes enumerated and guards proven | **this module** |
+| Run the whole cycle unattended — create, dev, QA, review, retro | `bmad-dev-auto` (bmm), or the `bmad-automator` module |
+| Generate API and E2E tests for code that already exists | `bmad-qa-generate-e2e-tests` (bmm) |
+| Set quality strategy, release gates, and a test architecture | the `tea` (Test Architect) module |
+
+The last two operate on code that has already been written. This one runs *while* the code is being written, and the tests are how the code gets built rather than something applied to it afterwards. It sits exactly where `bmad-dev-story` sits in the cycle — preceded by `bmad-create-story:validate`, followed by `bmad-code-review`.
+
 ## Requirements
 
 - BMad Method v6+ with the **`bmm` module installed**. This module is an extension of bmm, not a standalone: it reads bmm's `config.yaml` and discovers work through bmm's story files and `sprint-status.yaml`.
@@ -69,7 +83,7 @@ The standard `persistent_facts`, `activation_steps_prepend` / `_append`, and `on
 
 ## Test design
 
-The test list for each behavior is derived from the checklists in [`src/bmad-dev-tdd/test-design-reference.md`](src/bmad-dev-tdd/test-design-reference.md), adapted from _Pragmatic Unit Testing_ (Hunt & Thomas, The Pragmatic Programmers).
+The test list for each behavior is derived from the checklists in [`src/bmad-dev-tdd/test-design-reference.md`](src/bmad-dev-tdd/test-design-reference.md), adapted from *Pragmatic Unit Testing* (Hunt & Thomas, The Pragmatic Programmers).
 
 ## License
 

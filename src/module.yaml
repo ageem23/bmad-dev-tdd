@@ -1,6 +1,6 @@
 code: bmad-tdd
 name: 'Dev TDD (BMad Community Module)'
-description: 'Strict test-first story implementation: failure-mode analysis, then red-green-refactor, then defensive hardening'
+description: 'Test-first replacement for the dev step of the story cycle: failure-mode analysis, then red-green-refactor, then defensive hardening'
 default_selected: false
 
 # Requires the BMad Method (bmm) module. The workflow reads bmm's

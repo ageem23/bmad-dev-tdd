@@ -13,16 +13,29 @@
 #   4. Leave approved_date, reviewer, and trust_tier for the reviewers.
 #
 # Category is chosen from `categories.yaml` in the marketplace repo.
+#
 # software-development/dev-tools, not .../testing: this workflow's output is
 # an implemented story, and it substitutes for bmad-dev-story in the story
-# cycle. The QA slot is already held by bmad-qa-generate-e2e-tests, which
-# generates tests for code that already exists. Tests are this module's
-# mechanism, not its deliverable.
+# cycle. Tests are its mechanism, not its deliverable. The testing slot is
+# held by `tea` (Test Architect) and, in bmm, by bmad-qa-generate-e2e-tests —
+# both of which operate on code that already exists.
+#
+# Not a duplicate of the existing dev-tools entries:
+#   bmad-builder (bmb)     authors agents/workflows/modules — meta-tooling
+#   bmad-automator (baut)  orchestrates the WHOLE cycle unattended
+#                          (create/dev/QA/review/retro); this replaces one
+#                          step, interactively, with a specific methodology
+#   bmad-utility-skills    contributor tooling (triage, changelog, release)
+#
+# Note for reviewers: `software-development/methodology` would arguably fit
+# better — it is what bmm itself is registered under — but that slug is not
+# present in categories.yaml, so dev-tools is the closest valid choice.
+# Happy to move it if you would rather add the slug.
 
 name: bmad-dev-tdd
 display_name: Dev TDD (BMad Community Module)
 code: bmad-tdd
-description: Strict test-first story implementation — failure-mode analysis per behavior, then red-green-refactor, then defensive hardening justified by tests
+description: Test-first replacement for the dev step of the story cycle — per-behavior failure-mode analysis, then red-green-refactor, then defensive hardening justified by tests
 repository: https://github.com/ageem23/bmad-dev-tdd
 module_definition: src/module.yaml
 npm_package: null
