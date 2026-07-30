@@ -83,7 +83,7 @@ The standard `persistent_facts`, `activation_steps_prepend` / `_append`, and `on
 
 ## Test design
 
-The test list for each behavior is derived from the checklists in [`src/bmad-dev-tdd/test-design-reference.md`](src/bmad-dev-tdd/test-design-reference.md), adapted from *Pragmatic Unit Testing* (Hunt & Thomas, The Pragmatic Programmers).
+The test list for each behavior is derived from the checklists [`src/bmad-dev-tdd/test-design-reference.md`](src/bmad-dev-tdd/test-design-reference.md).
 
 ## License
 
